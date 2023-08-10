@@ -1,23 +1,30 @@
 #include<iostream>
 #include<string>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
 
     string S;
     cin >> S;
-    int length = S.length();
-    
-    int count = 0;
-    for(int i=0; i<length-1; i++){
-        for(int j=i+1; j<length; j++){
-            if(S[i] == S[j])
-                count++;
+    int distinct = 0;
+    int i=0;
+    int x=1;
+    sort(S.begin(), S.end());
+    while(i<S.size()){
+        x = 1;
+        if(S[i] == S[i+1]){
+            while(S[i] == S[i+x]){
+                x++;
+            }
+            distinct++;
+            i+=x;
+        }
+        else{
+            distinct++;
+            i+=x;
         }
     }
-
-    int distinct = length - count;
 
     if(distinct%2==0)
         cout <<"CHAT WITH HER!" << endl;
