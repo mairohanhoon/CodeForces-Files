@@ -6,33 +6,33 @@ int main()
 	string a, b;
 	int a1,b1,count = 0, diff = 0;
 	cin >> a >> b;
-	int size = a.size();
-	for (int i = 0; i < size; i++)
-	{
-		int a1 = a[i];
-		int b1 = b[i];
-		if (a1 == b1 || a1 == (b1 + 32) || (a1 + 32) == b1)
-			count++;
-		else
-		{
-			if (a1 > 90 && b1 > 90)
-				diff = a1 - b1;
-			else if (a1 <= 90 && b1 <= 90)
-				diff = a1 - b1;
-			else if (a1 > 90 && b1 < 90)
-				diff = (a1 - 32) - b1;
-			else if (a1 < 90 && b1 > 90)
-				diff = (a1) - (b1 - 32);
+	for(int i=0; i<a.size(); i++){
+		if(a[i] <'a'){
+			a[i] += 32;
+		}
+	}
+	for(int i=0; i<b.size(); i++){
+		if(b[i] <'a'){
+			b[i] += 32;
+		}
+	}
+
+	int check = 0;
+	for(int i=0; i<a.size(); i++){
+		if(a[i] < b[i]){
+			cout << "-1" << endl;
+			check = 1;
+			break;
+		}
+		else if(a[i] > b[i]){
+			cout << "1" << endl;
+			check = 1;
 			break;
 		}
 	}
-	if (count == size)
-		cout << "0";
-	else if (diff > 0)
-		cout << "1";
-	else if (diff < 0)
-		cout << "-1";
-	
-	
+	if(check == 0){
+		cout << "0" << endl;
+	}
+
 	return 0;
 }
