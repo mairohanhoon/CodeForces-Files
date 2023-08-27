@@ -1,1 +1,2 @@
-a = 0
+
+            cout << b << endl;
