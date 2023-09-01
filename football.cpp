@@ -4,28 +4,31 @@ using namespace std;
 
 int main(){
 
-    string S;
-    cin >> S;
-    int n = S.length();
-    int max = 1;
-    int count = 1;
-    for(int i=0; i<n-1; i++){
-        if(S[i] == S[i+1]){
-            count++;
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    n--;
+    int count1 = 1;
+    int count2= 0;
+    string sec;
+    while(n--){
+        string temp;
+        cin >> temp;
+        if(temp == s){
+            count1++;
         }
         else{
-            count = 1;
-        }
-
-        if(count > max){
-            max = count;
+            sec = temp;
+            count2++;
         }
     }
-    if(max >= 7){
-        cout << "YES" << endl;
+    if(count1 > count2){
+        cout << s << endl;
     }
     else{
-        cout << "NO" << endl;
+        cout << sec << endl;
     }
+
     return 0;
 }
