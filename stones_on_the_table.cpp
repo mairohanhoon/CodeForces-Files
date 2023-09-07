@@ -1,40 +1,32 @@
 #include<iostream>
 #include<string>
+#include<bits/stdc++.h>
+
 using namespace std;
 
 int main(){
 
     int n;
-    char A[50];
     cin >> n;
-    cin >> A;
-    if(n == 1){
-        cout << "0" << endl;
-    }
-    else{
-        int count = 0;
-        int x = 0;
-        while(x != 1){
-            int check = 0;
-            for(int i=0; i<n-1; i++){
-                if(A[i] == A[i+1]){
-                    check = 1;
-                    for(int j=i; j<n-1; j++){
-                        A[i] = A[i+1];
-                        n--;
-                    }
-                    i--;
-                }
+    string str;
+    cin >> str;
+    int x=1;
+    int i=0;
+    int count = 0;
+    while(i<n){
+        x = 1;
+        if(str[i] == str[i+1]){
+            while(str[i] == str[i+x]){
+                x++;
             }
-            if(check == 0){
-                x = 1;
-            }
-            else{
-                count++;
-            }
+            i+=x;
+            count += x-1;
         }
-        cout << count << endl;
+        else{
+            i++;
+        }
     }
+    cout << count << endl;
 
     return 0;
 }
