@@ -8,18 +8,24 @@ int main(){
     while(t--){
         int k;
         cin >> k;
-        int count = 0;
-        int x = 1;
-        while(k>=1){
-            if(k%3 == 0 || k%10 == 3){
-                count+=2;
+        int count = 1;
+        int temp;
+        while(k){
+            int check = 0;
+            temp = count;
+            if(temp%10 == 3 || temp%3 == 0){
+                check = 1;
+            }
+            if(check == 0){
+                count++;
+                k--;
             }
             else{
                 count++;
             }
-            k--;
+
         }
-        cout << count << endl;
+        cout << count-1 << endl;
     }
 
     return 0;
