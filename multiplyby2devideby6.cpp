@@ -21,3 +21,12 @@ int main(){
             else{
                 check = 0;
             }
+        }
+        if(check == 0){
+            cout << -1 << endl;
+        }
+        else{
+            cout << count << endl;
+        }
+    }
+}
