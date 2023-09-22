@@ -14,19 +14,11 @@ int main(){
             cin >> arr[i];
         }
         sort(arr, arr+n);
-        if(arr[0] == 0){
-            for(int i=1; i<n; i++){
-                pro*= arr[i];
-            }
-             cout << pro << endl;
+        arr[0]++;
+        for(int i=0;i<n;i++){
+            pro*=arr[i];
         }
-        else{
-            arr[n-1]++;
-            for(int i=0; i<n; i++){
-                pro*= arr[i];
-            }
-             cout << pro << endl;
-        }
+        cout << pro << endl;
     }
 
     return 0;
