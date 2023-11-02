@@ -5,17 +5,14 @@
 using namespace std;
 
 int main(){
-    int n;
+    long long n;
     cin >> n;
-    int sum = 0;
-    while(n!=0){
-        if(n%2==0){
-            sum += n;
-        }
-        else{
-            sum -= n;
-        }
-        n--;
+    long long sum = 0;
+    if(n%2 == 0){
+        sum = n/2;
+    }
+    else{
+        sum = -((n/2)+1);
     }
     cout << sum << endl;
     return 0;
