@@ -1,14 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int number(vector<int> &arr){
-    int numm = 0;
-    for(int i=0; i<arr.size(); i++){
-        numm = (numm*10) + arr[i];
-    }
-    return numm;
-}
-
 int main(){
 
     int t;
@@ -16,51 +8,43 @@ int main(){
     while(t--){
         int num; // denotes the current building
         cin >> num;
-        int total = 0;
-        
-        if(num == 1){
-            total = 1;
-            cout << total << endl;
+        int digit = 0;
+        int temp;
+        if(num < 10){
+            digit = 1;
+            temp = num;
+            temp--;
         }
-        else if(num == 2){
-            cout << 21 << endl;
+        else if(num >= 10 && num < 100){
+            digit = 2;
+            temp = num/10;
+            temp--;
         }
-        else if(num == 3){
-            cout << 31 << endl;
-        }
-        else if(num == 4){
-            cout << 41 << endl;
-        }
-        else if(num == 5){
-            cout << 51 << endl;
-        }
-        else if(num == 6){
-            cout << 61 << endl;
-        }
-        else if(num == 7){
-            cout << 71 << endl;
-        }
-        else if(num == 8){
-            cout << 81 << endl;
-        }
-        else if(num == 9){
-            cout << 91 << endl;
+        else if(num >= 100 && num < 1000){
+            digit = 3;
+            temp = num/100;
+            temp--;
         }
         else{
-            int  digit = 1;
-            vector<int> res;
-            int fin_number = number(res);
-            do{
-                if(res.size() >=4){
-                    res.clear();
-                    digit++;
-                }
-                res.push_back(digit);
-                total+=res.size();
-                fin_number = number(res);
-            }while(fin_number!=num);
-            cout << total << endl;
+            digit = 4;
+            temp = num/1000;
+            temp--;
         }
+        int res = 10*temp;
+        if(digit == 1){
+            res += 1;
+        } 
+        else if(digit == 2){
+            res += 3;
+        }
+        else if(digit == 3){
+            res += 6;
+        }
+        else{
+            res += 10;
+        }
+
+        cout << res << endl;
     }
 
     return 0;
