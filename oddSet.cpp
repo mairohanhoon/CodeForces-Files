@@ -19,16 +19,11 @@ int main(){
                 count_odd++;
             }
         }
-        if(count_odd%2 == 0){
-            if(count_odd%4==0){
-                cout << "No" << endl;
-            }
-            else{
-                cout << "Yes" << endl;
-            }
+        if(count_odd == (n/2)){
+            cout << "Yes" << endl;
         }
         else{
-            cout << "Yes" << endl;
+            cout << "No" << endl;
         }
     }
 
