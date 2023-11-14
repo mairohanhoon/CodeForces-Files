@@ -2,7 +2,10 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "format": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp"
     },
     "editor.acceptSuggestionOnEnter": "on"
 }
