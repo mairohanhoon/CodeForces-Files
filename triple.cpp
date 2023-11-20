@@ -15,29 +15,21 @@ int main(){
         for(int i=0;i<n;i++){
             cin >> arr[i];
         }
+        if(n < 3){
+            cout << -1 << endl;
+            continue;
+        }
         sort(arr, arr+n);
-        int i=0;
-        int x = 1;
-        while(i<n-1){
-            if(arr[i] == arr[i+1]){
-                x = 1;
-                while(arr[i] == arr[i+x]){
-                    x++;
-                }
-                if(x>=3){
-                    res.push_back(arr[i]);
-                }
-                i+=x;
-            }
-            else{
-                i++;
+        int check = 0;
+        for(int i=0; i<n-2; i++){
+            if(arr[i] == arr[i+1] && arr[i] == arr[i+2]){
+                cout << arr[i] << endl;
+                check = 1;
+                break;
             }
         }
-        if(res.size() == 0){
-            cout << "-1" << endl;
-        }
-        else{
-            cout << res[res.size()-1] << endl;
+        if(check == 0){
+            cout << -1 << endl;
         }
     }
 
