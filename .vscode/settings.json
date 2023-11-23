@@ -5,7 +5,9 @@
         "ostream": "cpp",
         "format": "cpp",
         "vector": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "istream": "cpp",
+        "string": "cpp"
     },
     "editor.acceptSuggestionOnEnter": "on"
 }

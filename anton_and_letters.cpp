@@ -3,25 +3,14 @@ using namespace std;
 
 int main(){
 
-    string str;
-    cin >> str;
-    string res;
-    for(int i=0; i<str.size(); i++){
-        if(str[i] >='a' && str[i] <= 'z'){
-            res+=str[i];
-        }
+    string s;
+    set <char> a;
+    getline(cin,s);
+    for(int i=0; i<s.length(); i++)
+    {
+        if(s[i]>='a' && s[i]<='z')
+            a.insert(s[i]);
     }
-    int count = 0;
-    int x=1;
-    int i=0;
-    while(i<res.size()){
-        x=1;
-        while(res[i] == res[i+x]){
-            x++;
-        }
-        count++;
-        i+=x;
-    }
-    cout << count << endl;
+    cout<<a.size()<<endl;
     return 0;
 }
