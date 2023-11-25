@@ -5,23 +5,29 @@ int main(){
 
     int n;
     cin >> n;
-
     int arr[n];
     for(int i=0; i<n; i++){
-        cin >> arr[n];
+        cin >> arr[i];
     }
+    int count = 0;
+    int a=0;
+    int b=0;
     sort(arr, arr+n);
-    if(n%2 != 0){
-        cout << (n/2)+1 << endl;
-    }
-    else{
-        if(arr[0] != arr[n-1]){
-            cout << (n/2)<< endl;
+    reverse(arr, arr+n);
+    int i = 0;
+    int j = n-1;
+    while(i<=j){
+        if(a>b+arr[j]){
+            b+=arr[j];
+            j--;
         }
         else{
-            cout << (n/2)+1 << endl;
+            a+=arr[i];
+            i++;
+            count++;
         }
     }
+    cout << count << endl;
 
     return 0;
 }
