@@ -3,35 +3,25 @@ using namespace std;
 
 int main(){
 
-    int long long n, k;
+    long long n, k;
     cin >> n >> k;
-    int long long odd;
-    if(n%2!=0){
-        odd = (n+1) / 2; 
+    long long i = 1;
+    k--;
+    while(i+2 <= n && k > 0){
+        i+=2;
+        k--;
+    }
+    if(k == 0){
+        return i;
     }
     else{
-        odd = n/2;
-    }
-    int long long result;
-    int long long even = n-odd;
-    if(k<=odd){
-        result = 1;
+        i = 2;
         k--;
-        while(k!=0){
-            result = result + 2;
+        while(i <= n && k!=0){
+            i+=2;
             k--;
         }
+        cout << i << endl;
     }
-    else{
-        result = 2;
-        k = k - odd;
-        k--;
-        while(k!=0){
-            result = result + 2;
-            k--;
-        }
-    }
-    cout << result << endl;
-
     return 0;
 }
