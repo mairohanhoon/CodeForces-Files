@@ -8,7 +8,10 @@
         "xstring": "cpp",
         "istream": "cpp",
         "string": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp"
     },
     "editor.acceptSuggestionOnEnter": "on"
 }
