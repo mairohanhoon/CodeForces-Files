@@ -54,15 +54,15 @@ int main(){
                 }
             }
         }
-        string ans = "";
-        
+        string aan= "";
+
         while(!st.empty()){
             char pttr = st.top();
-            ans.append(1, pttr);
+            aan.append(1, pttr);
             st.pop();
         }
-        reverse(ans.begin(), ans.end());
-        cout << ans << endl;
+        reverse(aan.begin(), aan.end());
+        cout << aan << endl;
     }
 
     return 0;

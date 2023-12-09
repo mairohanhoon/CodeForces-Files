@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<vector>
 using namespace std;
 
 int main(){
@@ -18,6 +19,7 @@ int main(){
             if(temp != str[1]){
                 cout << res << endl;
             }
+
         }
         for(int i=0; i<8; i++){
             string res = "";
@@ -29,6 +31,7 @@ int main(){
             }
             aa++;
         }
+
     }
 
     return 0;
