@@ -5,23 +5,18 @@ int main(){
 
     long long n, k;
     cin >> n >> k;
-    long long i = 1;
-    k--;
-    while(i+2 <= n && k > 0){
-        i+=2;
-        k--;
-    }
-    if(k == 0){
-        return i;
+    long long check;
+    if(n%2 == 0){
+        check = n/2;
     }
     else{
-        i = 2;
-        k--;
-        while(i <= n && k!=0){
-            i+=2;
-            k--;
-        }
-        cout << i << endl;
+        check = (n/2)+1;
+    }
+    if(k <= check){
+        cout << (k*2)-1;
+    }
+    else{
+        cout << (k-check)*2 << endl;
     }
     return 0;
 }

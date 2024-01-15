@@ -4,7 +4,7 @@ using namespace std;
 bool isVowel (char ch) {
     return ch == 'a' || ch == 'e';
 }
- 
+
 int main() {
     
     int t;
