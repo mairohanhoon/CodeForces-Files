@@ -12,15 +12,20 @@ int main(){
         for(int i=0; i<n; i++){
             cin >> arr[i];
         }
-        int check = arr[0];
-        for(int i=1; i<n; i++){
-            check = __gcd(check, arr[i]);
+        sort(arr.begin(), arr.end());
+        int minni = INT_MAX;
+        for(int i=0; i<n-1; i++){
+            for(int j=i+1; j<n; j++){
+                if(__gcd(arr[i], arr[j]) < minni){
+                    minni = __gcd(arr[i], arr[j]);
+                }
+            }
         }
-        if(check < n){
-            cout << "YES" << endl;
+        if(minni > 2){
+            cout << "No" << endl;
         }
         else{
-            cout << "NO" << endl;
+            cout << "Yes" << endl;
         }
     }
 
