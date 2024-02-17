@@ -9,14 +9,14 @@ int main(){
         int n, x, y;
         cin >> n >> x >> y;
         vector<int> arr(n);
-        int count = 0;
+        long long count = 0;
+        map<pair<int, int>, long long> hashh;
         for(int i=0; i<n; i++) cin >> arr[i];
-        for(int i=0; i<n-1; i++){
-            for(int j=i+1; j<n; j++){
-                int temp1 = arr[i]+arr[j];
-                int temp2 = abs(arr[i]-arr[j]);
-                if(temp1%x == 0 && temp2%y == 0) count++;
-            }
+        for(int i=0; i<n; i++){
+            int modx = (x - (arr[i] % x)) % x;
+            int mody = arr[i] % y;
+            count += hashh[{modx, mody}];
+            hashh[{arr[i]%x, arr[i]%y}]++;
         }
         cout << count << endl;
     }
