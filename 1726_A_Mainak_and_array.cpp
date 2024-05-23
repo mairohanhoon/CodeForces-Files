@@ -8,28 +8,26 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        int maxxi = 0; 
-        int minni = INT_MAX;
+        
+        
         vector<int> arr(n);
         for(int i=0; i<n; i++){
             cin >> arr[i];
-            if(arr[i] > maxxi) maxxi = arr[i];
+        }
+        int minni = arr[0];
+        int maxxi = arr[n-1]; 
+        for(int i=0; i<n-1; i++){
             if(arr[i] < minni) minni = arr[i];
         }
-        if(n == 1){
-            cout << 0 << endl;
+        int res = arr[n-1] - minni;
+        for(int i=1; i<n; i++){
+            if(arr[i] > maxxi) maxxi = arr[i];
         }
-        else if(arr[0] == minni || arr[n-1] == maxxi){
-            cout << maxxi - minni << endl;
+        res = max(res, maxxi - arr[0]);
+        for(int i=0; i<n-1; i++){
+            res = max(res, (arr[i]-arr[i+1]));
         }
-        else if(arr[0] = maxxi && arr[1] == minni){
-            cout << maxxi - minni << endl;
-        }
-        else{
-            int a = maxxi - arr[0];
-            int b = arr[n-1] - minni;
-            cout << max(a, b) << endl;
-        }
+        cout << res << endl;
     }
 
     return 0;
