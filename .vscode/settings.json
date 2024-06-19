@@ -12,7 +12,9 @@
         "initializer_list": "cpp",
         "type_traits": "cpp",
         "xutility": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "algorithm": "cpp",
+        "limits": "cpp"
     },
     "editor.acceptSuggestionOnEnter": "on"
 }
